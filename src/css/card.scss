@@ -1,0 +1,57 @@
+.calculatorcontainer {
+  width: 100%;
+  margin: 5px;
+  justify-content: center;
+}
+
+.c1 {
+  background-color: #42548a;
+}
+
+.calculatorbox {
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 7px;
+  align-items: center;
+  text-align: center;
+}
+
+.inputflex {
+  width: 100%;
+  margin: 0;
+  justify-content: center;
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.inputflex label {
+  width: 120px;
+  font-size: 20px;
+  cursor: default;
+}
+
+.calculatorbox input:not(.normalinput) {
+  all: unset;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.calcSDoutput {
+  width: 100%;
+}
+
+div {
+  display: block;
+}
+
+.calculatorcontainer h1 {
+  font-size: 60px;
+}
+
+h1 {
+  font-weight: normal;
+  margin: 0;
+  display: block;
+}
