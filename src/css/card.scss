@@ -15,6 +15,7 @@
   padding: 7px;
   align-items: center;
   text-align: center;
+  border-radius: 10px;
 }
 
 .inputflex {
@@ -24,6 +25,10 @@
   display: flex;
   align-items: flex-start;
   text-align: center;
+}
+
+#calcSDLi {
+  border-radius: 10px;
 }
 
 .inputflex label {
@@ -39,6 +44,7 @@
 }
 
 .calcSDoutput {
+  display: hidden;
   width: 100%;
 }
 
@@ -54,4 +60,36 @@ h1 {
   font-weight: normal;
   margin: 0;
   display: block;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.calculatorcontainer table:first-of-type tr:first-of-type {
+  border-top: 1px solid;
+}
+
+.calculatorcontainer table {
+  width: 100%;
+  font-size: 14px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.calculatorcontainer table tr {
+  border-color: #fff;
+  border-bottom: 1px solid;
+}
+
+.calculatorcontainer table tr td:last-of-type {
+  text-align: right;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

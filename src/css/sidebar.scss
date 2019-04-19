@@ -1,0 +1,52 @@
+aside,
+nav {
+  display: block;
+}
+
+aside.rightmenu {
+  width: auto;
+  float: none;
+  margin: 0 30px 30px;
+  color: black;
+}
+
+nav.mainsitenavigation {
+  background: #eee;
+  box-shadow: 0 4px 15px #aaa;
+  text-align: center;
+  font-size: 15px;
+  padding: 0;
+}
+
+nav.mainsitenavigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 40px;
+}
+
+nav.mainsitenavigation li {
+  padding: 0;
+  &:hover {
+    background: rgb(40, 40, 143);
+  }
+}
+
+li {
+  display: list-item;
+}
+
+nav.mainsitenavigation li a {
+  display: block;
+  color: inherit;
+  padding: 8px 16px;
+  text-decoration: none;
+}
