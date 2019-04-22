@@ -33,11 +33,17 @@ class Sidebar extends Component {
             <li>Home</li>
             <li>WIP Chart</li>
             <li>Full Calculator</li>
-            <li>Ball Size Calculator</li>
+            <Link to="/percent">
+              <li>Percentage</li>
+            </Link>
             <li>Dataset List</li>
             <li>The Calculations</li>
-            <li>Measuring</li>
-            <li>Skepticism</li>
+            <Link to="/form">
+              <li>Form</li>
+            </Link>
+            <Link to="/scroll">
+              <li>ScrollBar</li>
+            </Link>
             <li>Changelog</li>
             <li>About/Feedback</li>
             <li>Other Websites</li>

@@ -1,29 +1,34 @@
 import React, { Component } from 'react';
+import { CSSTransition } from 'react-transition-group';
+
 import './css/card.scss';
 
 class PercentileCard extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = { value: '', inProp: false };
   }
 
-  /*componentDidMount() {
-    this.nameInput.focus();
-  }*/
+  componentDidUpdate(prevProps, prevState) {
+    document.querySelector('.' + this.props.className).focus();
+  }
 
   handleChange = event => {
     const val = event.target.value;
     this.setState({ value: val });
+
+    console.log(this.state);
   };
 
   renderContent() {
-    console.log(this.state.value);
-    if (this.state.value.length === 0) {
-      return (
+    // if (this.state.value.length === 0) {
+    return (
+      <div>
         <div className="inputflex">
-          <label htmlFor="calcSDLi">LENGTH</label>
+          <label htmlFor="calcSDLi">Enter Height:</label>
           <input
-            ref={input => input && input.focus()}
+            className={this.props.className}
+            //ref={input => input && input.focus()}
             onChange={this.handleChange}
             value={this.state.value}
             type="number"
@@ -31,51 +36,95 @@ class PercentileCard extends Component {
             id="calcSDLi"
           />
         </div>
-      );
-    } else {
+        <CSSTransition in={this.state.inProp} timeout={500} classNames="fade">
+          <div>
+            <div className="calcSDoutput">
+              <h1>{((this.state.value / 78) * 100).toFixed(2)}%</h1>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Average (SD):</td>
+                    <td>5.64"</td>
+                  </tr>
+                  <tr>
+                    <td>In a room of n guys:</td>
+                    <td>122</td>
+                  </tr>
+                  <tr>
+                    <td>Z-Score</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>Classification</td>
+                    <td>Micro</td>
+                  </tr>
+                  <tr>
+                    <td>Times the Avg Size:</td>
+                    <td>0.4</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </CSSTransition>
+      </div>
+    );
+    /*  } else {
       return (
-        <div>
-          <div className="inputflex">
-            <label htmlFor="calcSDLi">LENGTH</label>
-            <input
-              ref={input => input && input.focus()}
-              onChange={this.handleChange}
-              value={this.state.value}
-              type="number"
-              step="any"
-              id="calcSDLi"
-            />
+        <CSSTransition
+          in={this.state.inProp}
+          timeout={500}
+          classNames="fade"
+          onEnter={() => this.setState({ inProp: true })}
+          onExited={() => this.setState({ inProp: false })}
+        >
+          <div>
+            <div className="inputflex">
+              <label htmlFor="calcSDLi">HEIGHT</label>
+              <input
+                //ref={input => input && input.focus()}
+                className={this.props.className}
+                onChange={this.handleChange}
+                value={this.state.value}
+                type="number"
+                step="any"
+                id="calcSDLi"
+              />
+            </div>
+
+            <div>
+              <div className="calcSDoutput">
+                <h1>{((this.state.value / 78) * 100).toFixed(2)}%</h1>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Average (SD):</td>
+                      <td>5.64"</td>
+                    </tr>
+                    <tr>
+                      <td>In a room of n guys:</td>
+                      <td>122</td>
+                    </tr>
+                    <tr>
+                      <td>Z-Score</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>Classification</td>
+                      <td>Micro</td>
+                    </tr>
+                    <tr>
+                      <td>Times the Avg Size:</td>
+                      <td>0.4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <div className="calcSDoutput">
-            <h1>{(this.state.value * 13.38).toFixed(2)}%</h1>
-            <table>
-              <tbody>
-                <tr>
-                  <td>Average (SD):</td>
-                  <td>5.64"</td>
-                </tr>
-                <tr>
-                  <td>In a room of n guys:</td>
-                  <td>122</td>
-                </tr>
-                <tr>
-                  <td>Z-Score</td>
-                  <td>4</td>
-                </tr>
-                <tr>
-                  <td>Classification</td>
-                  <td>Micro</td>
-                </tr>
-                <tr>
-                  <td>Times the Avg Size:</td>
-                  <td>0.4</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        </CSSTransition>
       );
-    }
+    }*/
   }
 
   render() {

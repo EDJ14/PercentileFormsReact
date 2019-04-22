@@ -4,6 +4,10 @@ import PercentileCard from './PercentileCard';
 import './css/cards.scss';
 
 class PercentileCards extends React.Component {
+  componentDidMount() {
+    document.querySelector('input').focus();
+  }
+
   render() {
     return (
       <div className="cardscont">
