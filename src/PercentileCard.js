@@ -44,10 +44,10 @@ class PercentileCard extends Component {
                 <tbody>
                   <tr>
                     <td>Average (SD):</td>
-                    <td>5.64"</td>
+                    <td>6ft 8"</td>
                   </tr>
                   <tr>
-                    <td>In a room of n guys:</td>
+                    <td>In NBA:</td>
                     <td>122</td>
                   </tr>
                   <tr>
@@ -59,7 +59,7 @@ class PercentileCard extends Component {
                     <td>Micro</td>
                   </tr>
                   <tr>
-                    <td>Times the Avg Size:</td>
+                    <td>Times the Avg:</td>
                     <td>0.4</td>
                   </tr>
                 </tbody>
