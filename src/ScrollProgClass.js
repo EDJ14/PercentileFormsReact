@@ -96,7 +96,7 @@ class ScrollProgClass extends Component {
           <h1>L</h1>
           <br />
           <h1>O</h1>
-          <h1>N</h1>
+          <h1>M</h1>
           <br />
           <h1>
             <div className="arrow-down" />
